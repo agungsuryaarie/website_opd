@@ -124,7 +124,7 @@
 
 <!-- Template Main JS File -->
 <script src="{{ url('front/js/main.js') }}"></script>
-
+@yield('script')
 </body>
 
 </html>

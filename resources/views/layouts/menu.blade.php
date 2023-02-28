@@ -17,7 +17,7 @@
                 </li>
             </ul>
         </li>
-        <li><a class="nav-link scrollto" href="#">Download</a></li>
+        <li><a class="nav-link scrollto" href="{{ route('download.index') }}">Download</a></li>
         <li><a class="nav-link scrollto" href="{{ route('kontak.index') }}">Kontak Kami</a></li>
     </ul>
     <i class="bi bi-list mobile-nav-toggle"></i>
