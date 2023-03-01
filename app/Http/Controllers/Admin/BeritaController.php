@@ -53,6 +53,11 @@ class BeritaController extends Controller
         return redirect()->route('berita.index')->with(['success' => 'Data Berhasil Disimpan ke Database!']);
     }
 
+    public function show(Berita $berita)
+    {
+        return view('admin.berita.show', compact('berita'));
+    }
+
     public function edit($id)
     {
         $menu = 'Edit Berita';

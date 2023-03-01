@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Halaman;
 use Illuminate\Http\Request;
 
-class BeritaController extends Controller
+class HalamanProfilController extends Controller
 {
     public function index()
     {
-
-        return view('berita');
     }
 }

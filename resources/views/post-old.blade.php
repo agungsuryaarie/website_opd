@@ -7,44 +7,31 @@
                 <div class="col-lg-7">
                     <div class="item box-shadow">
                         <div class="row">
-                            <div class="col-sm-5 image mb-30">
-                                <img src="{{ url('front/img/2.jpeg') }}" alt="">
-                            </div>
-                            <div class="col-sm-7">
-                                <div class="blog-grid">
-                                    <h3><a href="blog_single.html">New winter fashion style</a></h3>
-                                    <ul class="blog-grid-info">
-                                        <li>Evan Bartlett</li>
-                                        <li>Mar 6, 2015</li>
-                                        <li><a href="#"><i class="fa fa-comments"></i> 0</a></li>
-                                    </ul>
-                                    <p>Pellentesque turpis lacus, tempus et fermentum vitae, dignissim ornare purus. Nulla
-                                        facilisi.
-                                        Suspendisse potenti. Aenean vitae lacus lobortis lacus finibus volutpat eu nec sem.
-                                        Sed
-                                        ultrices
-                                        velit.</p>
+                            @foreach ($post as $all)
+                                <div class="col-sm-5 image mb-30">
+                                    <img src="{{ url('front/img/2.jpeg') }}" alt="">
                                 </div>
-                            </div>
-                            <div class="col-sm-5 image mb-30">
-                                <img src="{{ url('front/img/2.jpeg') }}" style="width: 100%" alt="">
-                            </div>
-                            <div class="col-sm-7">
-                                <div class="blog-grid">
-                                    <h3><a href="blog_single.html">New winter fashion style</a></h3>
-                                    <ul class="blog-grid-info">
-                                        <li>Evan Bartlett</li>
-                                        <li>Mar 6, 2015</li>
-                                        <li><a href="#"><i class="fa fa-comments"></i> 0</a></li>
-                                    </ul>
-                                    <p>Pellentesque turpis lacus, tempus et fermentum vitae, dignissim ornare purus. Nulla
-                                        facilisi.
-                                        Suspendisse potenti. Aenean vitae lacus lobortis lacus finibus volutpat eu nec sem.
-                                        Sed
-                                        ultrices velit.</p>
+                                <div class="col-sm-7">
+                                    <div class="blog-grid">
+                                        <h3><a href="{{ route('post.show', $all->slug) }}">{{ $all->judul }}</a></h3>
+                                        <ul class="blog-grid-info">
+                                            <li>Evan Bartlett</li>
+                                            <li>Mar 6, 2015</li>
+                                            <li><a href="#"><i class="fa fa-comments"></i> 0</a></li>
+                                        </ul>
+                                        <p>Pellentesque turpis lacus, tempus et fermentum vitae, dignissim ornare purus.
+                                            Nulla
+                                            facilisi.
+                                            Suspendisse potenti. Aenean vitae lacus lobortis lacus finibus volutpat eu nec
+                                            sem.
+                                            Sed
+                                            ultrices
+                                            velit.</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <nav aria-label="Page navigation example">
+                            @endforeach
+                            {{ $post->links() }}
+                            {{-- <nav aria-label="Page navigation example">
                                 <ul class="pagination">
                                     <li class="page-item"><a class="page-link" href="#">Previous</a></li>
                                     <li class="page-item"><a class="page-link" href="#">1</a></li>
@@ -52,7 +39,7 @@
                                     <li class="page-item"><a class="page-link" href="#">3</a></li>
                                     <li class="page-item"><a class="page-link" href="#">Next</a></li>
                                 </ul>
-                            </nav>
+                            </nav> --}}
                         </div>
 
                     </div>
