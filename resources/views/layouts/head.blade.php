@@ -35,7 +35,9 @@
     {{-- blog style --}}
     <link href="{{ url('front/css/blog.style.css') }}" rel="stylesheet">
 
-    <link href="https://cdn.datatables.net/1.13.3/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url('front/DataTables/datatables.min.css') }}">
+
+
 
 
 

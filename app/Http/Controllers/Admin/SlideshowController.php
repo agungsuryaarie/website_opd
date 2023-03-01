@@ -85,7 +85,7 @@ class SlideshowController extends Controller
                 'gambar' => $img->hashName(),
             ]);
         } else {
-            //update sambutan without image img & logo
+            //update slideshow without image img & logo
             $slideshow->update([
                 'judul' => $request->judul,
             ]);

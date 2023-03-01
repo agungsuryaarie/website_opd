@@ -4,8 +4,10 @@
         <li><a class="nav-link scrollto" href="#visi-misi">Profil</a></li>
         <li class="dropdown"><a href="{{ route('post.index') }}"><span>Berita</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-                <li><a href="#">Berita Dinas</a></li>
-                <li><a href="#">Berita Pemerintahan</a>
+                <li><a href="{{ route('post.dinas') }}">Dinas</a></li>
+                <li><a href="{{ route('post.pemerintahan') }}">Pemerintahan</a>
+                </li>
+                <li><a href="{{ route('post.umum') }}">Umum</a>
                 </li>
             </ul>
         </li>

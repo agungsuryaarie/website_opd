@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Banner extends Model
+class Link extends Model
 {
     use HasFactory;
-    protected $table = 'banner';
+    protected $table = 'link';
 
     protected $fillable = [
-        'nama', 'url', 'gambar'
+        'nama', 'link_url', 'gambar'
     ];
 }

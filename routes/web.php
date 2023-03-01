@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\VideoController;
 use App\Http\Controllers\Admin\SlideshowController;
 use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\FiledownloadController;
+use App\Http\Controllers\Admin\LinkController;
 use App\Http\Controllers\Admin\SettingController;
 use Illuminate\Support\Facades\Route;
 
@@ -81,6 +82,13 @@ Route::middleware('auth')->group(function () {
     Route::post('/file-download/store', [FiledownloadController::class, 'store'])->name('file-download.store');
     Route::put('/file-download/{filedownload}/update', [FiledownloadController::class, 'update'])->name('file-download.update');
     Route::delete('/file-download/{filedownload}/destroy', [FiledownloadController::class, 'destroy'])->name('file-download.destroy');
+});
+
+Route::middleware('auth')->group(function () {
+    Route::get('/link', [LinkController::class, 'index'])->name('link.index');
+    Route::post('/link/store', [LinkController::class, 'store'])->name('link.store');
+    Route::put('/link/{link}/update', [LinkController::class, 'update'])->name('link.update');
+    Route::delete('/link/{link}/destroy', [LinkController::class, 'destroy'])->name('link.destroy');
 });
 
 Route::middleware('auth')->group(function () {

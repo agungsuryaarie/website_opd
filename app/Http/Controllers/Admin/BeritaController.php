@@ -109,8 +109,6 @@ class BeritaController extends Controller
                 'tanggal' => date('Y-m-d'),
                 'jam' => date('H:i:s'),
             ]);
-
-
             //redirect to index
             return redirect()->route('berita.index')->with(['success' => 'Data Berhasil Disimpan ke Database!']);
         }

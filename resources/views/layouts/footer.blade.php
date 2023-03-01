@@ -127,7 +127,9 @@
 
 <!-- Template Main JS File -->
 <script src="{{ url('front/js/main.js') }}"></script>
-<script src="https:://cdn.datatables.net/1.13.3/js/jquery.dataTables.min.js"></script>
+<script src="{{ url('front/DataTables/datatables.min.js') }}"></script>
+{{-- <script type="text/javascript" src="<?= base_url() ?>template/DataTables/datatables.min.js"></script> --}}
+
 
 
 @yield('script')

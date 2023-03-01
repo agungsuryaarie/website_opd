@@ -84,6 +84,15 @@
             </a>
         </li> --}}
         <li class="nav-item">
+            <a href="{{ route('link.index') }}"
+                class="nav-link {{ request()->segment(1) == 'link' ? 'active' : '' }}">
+                <i class="nav-icon fas fa-cogs"></i>
+                <p>
+                    Link
+                </p>
+            </a>
+        </li>
+        <li class="nav-item">
             <a href="{{ route('setting.index') }}"
                 class="nav-link {{ request()->segment(1) == 'setting' ? 'active' : '' }}">
                 <i class="nav-icon fas fa-cogs"></i>

@@ -40,6 +40,8 @@
 
 @section('script')
     <script>
-        let table = new DataTable('#myTable');
+        $(document).ready(function() {
+            $('#myTable').DataTable();
+        });
     </script>
 @endsection

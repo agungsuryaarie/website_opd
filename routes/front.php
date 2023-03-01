@@ -17,3 +17,6 @@ Route::get('/kontak', [KontakController::class, 'index'])->name('kontak.index');
 Route::get('/download', [DownloadController::class, 'index'])->name('download.index');
 Route::get('/post', [PostController::class, 'index'])->name('post.index');
 Route::get('/post/{post:slug}', [PostController::class, 'show'])->name('post.show');
+Route::get('/post_dinas', [PostController::class, 'dinas'])->name('post.dinas');
+Route::get('/post_pemerintahan', [PostController::class, 'pemerintahan'])->name('post.pemerintahan');
+Route::get('/post_umum', [PostController::class, 'umum'])->name('post.umum');
