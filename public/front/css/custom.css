@@ -1,0 +1,45 @@
+.slideshow{
+    padding-top: 82px;
+}
+
+.row-news{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.row-blog{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.box-shadow{
+    flex: 0 1 23rem;
+    display: flex;
+    align-items: center;
+    margin: 20px 18px 44px;
+    background: #fff;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 15px rgb(0 0 0 / 5%);
+    border-radius: 10px;
+    /* padding: 17px 18px 17px; */
+    padding: 30px;
+    align-self: normal;
+}
+.recent-news{
+    box-shadow: 0 0 15px rgb(0 0 0 / 5%);
+    padding: 52px;
+}
+
+.mb-30{
+    margin-bottom: 30px;
+}
+.mb-10{
+    margin-bottom: 10px;
+}
+
+.image img{
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}

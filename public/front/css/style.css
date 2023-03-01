@@ -131,6 +131,7 @@ h6 {
 #header {
   transition: all 0.5s;
   z-index: 997;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
   padding: 20px 0;
 }
 
@@ -959,6 +960,7 @@ section {
   }
 }
 
+
 /*--------------------------------------------------------------
 # Portfolio
 --------------------------------------------------------------*/
@@ -1548,7 +1550,7 @@ section {
 #footer {
   color: #fff;
   font-size: 14px;
-  background: linear-gradient(45deg, rgba(86, 58, 250, 0.9) 0%, rgba(116, 15, 214, 0.9) 100%), url("../img/hero-bg.jpg") center center no-repeat;
+  background: linear-gradient(45deg, rgb(34 18 127 / 90%) 0%, rgb(24 32 206 / 90%) 100%), url(../img/hero-bg.jpg) center center no-repeat;
   background-size: cover;
 }
 
@@ -1815,8 +1817,8 @@ section {
       transition: all 0.3s ease-in-out;
       box-shadow: 0 0 15px rgb(0 0 0 / 5%);
       border-radius: 15px;
-      /* padding: 17px 18px 17px; */
-      padding: 30px;
+      padding: 17px 18px 17px;
+      /* padding: 30px; */
       align-self: normal;
   }
 
@@ -1835,7 +1837,7 @@ section {
 }
 
 .cardpokersize h3{
-  font-size: 21px;
+  font-size: 18px;
   font-weight: 600;
   color: #3f3975;
   margin-bottom: 1em;
