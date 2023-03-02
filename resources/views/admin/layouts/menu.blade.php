@@ -86,7 +86,7 @@
         <li class="nav-item">
             <a href="{{ route('link.index') }}"
                 class="nav-link {{ request()->segment(1) == 'link' ? 'active' : '' }}">
-                <i class="nav-icon fas fa-cogs"></i>
+                <i class="nav-icon fas fa-globe"></i>
                 <p>
                     Link
                 </p>

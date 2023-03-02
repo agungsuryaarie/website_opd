@@ -574,7 +574,7 @@ h6 {
 # Sections General
 --------------------------------------------------------------*/
 section {
-  padding: 100px 0;
+  padding: 50px 0;
   overflow: hidden;
 }
 
@@ -883,13 +883,13 @@ section {
 }
 
 .testimonials .testimonial-item .testimonial-img {
-  width: 90px;
-  border-radius: 50%;
+  width: 100px;
+  /* border-radius: 50%; */
   margin-bottom: 20px;
   position: relative;
   z-index: 2;
-  border: 6px solid #fff;
-  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  /* border: 6px solid #fff;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1); */
 }
 
 .testimonials .testimonial-item h3 {

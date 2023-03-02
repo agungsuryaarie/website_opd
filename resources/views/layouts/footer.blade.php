@@ -131,7 +131,6 @@
 {{-- <script type="text/javascript" src="<?= base_url() ?>template/DataTables/datatables.min.js"></script> --}}
 
 
-
 @yield('script')
 </body>
 

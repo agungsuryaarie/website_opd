@@ -21,141 +21,99 @@
             </button>
         </div>
     </div>
-    <!-- End Hero -->
 
     <main id="main">
         <section id="news" class="news section-bg">
             <div class="container">
-                <div class="section-title">
-                    <h2>Berita Terbaru</h2>
-                </div>
                 <div class="row-blog">
                     <div class="col-md-7">
-                        <div class="row">
-                            <div class="col-sm-7">
-                                <!-- Blog Grid -->
-                                <div class="blog-grid sm-margin-bottom-40">
-                                    <div class="blog-grid-grad">
-                                        <img src="{{ url('front/img/2.jpeg') }}" style="width: 100%" alt="">
+                        <div class="section-tittle">
+                            <div class="d-flex bd-highlight">
+                                <h2 class="flex-grow-1 bd-highlight">Berita Dinas</h2>
+                                <div class="bd-highlight" id="event-more">
+                                    <div class="view-more">
+                                        <a href="https://smartcity.batubarakab.go.id/berita-api"
+                                            class="d-flex align-items-center jss-cinfo text-hover-primary mb-10">Lihat semua
+                                            <i
+                                                class="fad fa-chevron-double-right d-none d-md-block d-lg-block py-1 px-1 jss-cinfo"></i>>></a>
                                     </div>
-                                    <h3><a href="blog_single.html">Paris-Nice: Gallopin wins stage 6 and takes race lead</a>
-                                    </h3>
-                                    <ul class="blog-grid-info">
-                                        <li>Richard Garner</li>
-                                        <li>Mar 6, 2015</li>
-                                        <li><a href="#"><i class="fa fa-comments"></i> 0</a></li>
-                                    </ul>
-                                    <p>Nulla gravida sit amet odio vel posuere. Proin maximus est diam, sed iaculis arcu
-                                        ultrices sed.
-                                        Quisque nisi diam, sodales sit amet diam ut, bibendum interdum metus.</p>
-                                    <a class="r-more" href="blog_single.html">Read More</a>
                                 </div>
-                                <!-- End Blog Grid -->
                             </div>
+                        </div>
+                        <div class="row">
+                            @foreach ($post_dinas as $post)
+                                <div class="col-sm-7">
+                                    <div class="blog-grid sm-margin-bottom-40">
+                                        <div class="blog-grid-grad">
+                                            <img src="{{ url('storage/berita', $post->foto) }}" style="width: 100%"
+                                                alt="">
+                                        </div>
+                                        <h3><a href="blog_single.html">{{ $post->judul }}</a>
+                                        </h3>
+                                        <ul class="blog-grid-info">
+                                            <li><i class="bi bi-calendar"></i> {{ $post->tanggal }}</li>
+                                            <li><i class="bi bi-clock"></i> {{ $post->jam }} WIB</li>
+                                        </ul>
+                                        <p>Nulla gravida sit amet odio vel posuere. Proin maximus est diam, sed iaculis arcu
+                                            ultrices sed.
+                                            Quisque nisi diam, sodales sit amet diam ut, bibendum interdum metus.</p>
+                                        <a class="r-more" href="blog_single.html">Read More</a>
+                                    </div>
+                                </div>
+                            @endforeach
+
 
                             <div class="col-sm-5">
-                                <!-- Blog Thumb v2 -->
-                                <div class="blog-thumb-v2 margin-bottom-20">
-                                    <div class="blog-thumb-grad">
-                                        <img src="{{ url('front/img/2.jpeg') }}" alt="">
+                                @foreach ($post_latest as $post)
+                                    <div class="blog-thumb-v2">
+                                        <div class="blog-thumb-grad">
+                                            <img src="{{ url('storage/berita', $post->foto) }}" alt="">
+                                        </div>
+                                        <div class="blog-thumb-desc">
+                                            <h3><a href="blog_single.html">{{ $post->judul }}</a></h3>
+                                            <ul class="blog-thumb-info">
+                                                <li>Mar 6, 2015</li>
+                                                <li><a href="#"><i class="fa fa-comments"></i> 0</a></li>
+                                            </ul>
+                                        </div>
                                     </div>
-                                    <div class="blog-thumb-desc">
-                                        <h3><a href="blog_single.html">Brady handed his place in history</a></h3>
-                                        <ul class="blog-thumb-info">
-                                            <li>Mar 6, 2015</li>
-                                            <li><a href="#"><i class="fa fa-comments"></i> 0</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <!-- End Blog Thumb v2 -->
-
-                                <!-- Blog Thumb v2 -->
-                                <div class="blog-thumb-v2 margin-bottom-20">
-                                    <div class="blog-thumb-grad">
-                                        <img src="{{ url('front/img/2.jpeg') }}" alt="">
-                                    </div>
-                                    <div class="blog-thumb-desc">
-                                        <h3><a href="blog_single.html">Jason is the best in the world</a></h3>
-                                        <ul class="blog-thumb-info">
-                                            <li>Mar 6, 2015</li>
-                                            <li><a href="#"><i class="fa fa-comments"></i> 0</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <!-- End Blog Thumb v2 -->
-
-                                <!-- Blog Thumb v2 -->
-                                <div class="blog-thumb-v2 margin-bottom-20">
-                                    <div class="blog-thumb-grad">
-                                        <img src="{{ url('front/img/2.jpeg') }}" alt="">
-                                    </div>
-                                    <div class="blog-thumb-desc">
-                                        <h3><a href="blog_single.html">This woman is the real winner of the Super Bowl</a>
-                                        </h3>
-                                        <ul class="blog-thumb-info">
-                                            <li>Mar 6, 2015</li>
-                                            <li><a href="#"><i class="fa fa-comments"></i> 0</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <!-- End Blog Thumb v2 -->
-
-                                <!-- Blog Thumb v2 -->
-                                <div class="blog-thumb-v2 margin-bottom-20">
-                                    <div class="blog-thumb-grad">
-                                        <img src="{{ url('front/img/2.jpeg') }}" alt="">
-                                    </div>
-                                    <div class="blog-thumb-desc">
-                                        <h3><a href="blog_single.html">Who are the 10 greatest living athletes in the
-                                                UK?</a></h3>
-                                        <ul class="blog-thumb-info">
-                                            <li>Mar 6, 2015</li>
-                                            <li><a href="#"><i class="fa fa-comments"></i> 0</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <!-- End Blog Thumb v2 -->
-
-                                <!-- Blog Thumb v2 -->
-                                <div class="blog-thumb-v2">
-                                    <div class="blog-thumb-grad">
-                                        <img src="{{ url('front/img/2.jpeg') }}" alt="">
-                                    </div>
-                                    <div class="blog-thumb-desc">
-                                        <h3><a href="blog_single.html">Contador confident before Tirreno-Adriatico showdown
-                                                on
-                                                Terminillo</a></h3>
-                                        <ul class="blog-thumb-info">
-                                            <li>Mar 6, 2015</li>
-                                            <li><a href="#"><i class="fa fa-comments"></i> 0</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <!-- End Blog Thumb v2 -->
+                                @endforeach
                             </div>
                         </div>
-
-
                     </div>
-                    <div class="col-md-3">
-                        <div class="blog-grid-grad">
-                            <img src="{{ url('front/img/2.jpeg') }}" style="width: 100%" alt="">
+                    @foreach ($banner as $b)
+                        <div class="col-md-3">
+                            <div class="blog-grid-grad">
+                                <img src="{{ url('storage/banner', $b->gambar) }}" style="width: 100%" alt="">
+                            </div>
                         </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </section>
 
         <section id="features" class="services section-bg">
-            <div class="section-tittle">
-                <h3>Features</h3>
+            <div class="container-f">
+                <div class="section-tittle">
+                    <div class="d-flex bd-highlight">
+                        <h2 class="flex-grow-1 bd-highlight">Berita Pemerintahan</h2>
+                        <div class="bd-highlight" id="event-more">
+                            <div class="view-more">
+                                <a href="https://smartcity.batubarakab.go.id/berita-api"
+                                    class="d-flex align-items-center jss-cinfo text-hover-primary mb-10">Lihat semua
+                                    <i
+                                        class="fad fa-chevron-double-right d-none d-md-block d-lg-block py-1 px-1 jss-cinfo"></i>>></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="row-card">
-                @foreach ($berita as $b)
+                @foreach ($post_pemerintahan as $post)
                     <div class="cardpokersize">
-                        <img src="{{ url('storage/berita/' . $b->foto) }}">
+                        <img src="{{ url('storage/berita/' . $post->foto) }}">
                         {{-- <img src="{{ url('front/img/2.jpeg') }}"> --}}
-                        <h3>{{ $b->judul }}</h3>
+                        <h3>{{ $post->judul }}</h3>
                         <p>Input data perencanaan lima tahunan yang dilakukan oleh fungsi perencana pada Pemerintah
                             Daerah
                         </p>
@@ -164,53 +122,84 @@
             </div>
         </section>
 
+
+        <section id="berita" class="berita">
+            <div class="popular-tours g-pb-20" id="Popular-Tours">
+                <div class="container-f">
+                    <div class="section-tittle">
+                        <div class="d-flex bd-highlight">
+                            <h2 class="flex-grow-1 bd-highlight">Infografis</h2>
+                            <div class="bd-highlight" id="event-more">
+                                <div class="view-more">
+                                    <a href="https://smartcity.batubarakab.go.id/berita-api"
+                                        class="d-flex align-items-center jss-cinfo text-hover-primary mb-10">Lihat semua <i
+                                            class="fad fa-chevron-double-right d-none d-md-block d-lg-block py-1 px-1 jss-cinfo"></i>>></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row slider text-left">
+                        <div class="col-md-4 col-xs-6 col-2xs-12 g-mb-30">
+                            <div class="popular-tours-item">
+                                <div class="img-wrapper img-wrapper--shadow">
+                                    <img src="{{ url('front/img/3.png') }}" alt="ALT" class="img-responsive">
+                                </div>
+                                <div class="popular-tours-item-info blog-grid">
+                                    <div class="popular-tours-item-info-inner">
+                                        <h3><em>Infografis Bencana Tahun 2022</em></h3>
+                                    </div>
+                                </div>
+                                <a href="" class="popular-tours-item__more"></a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-xs-6 col-2xs-12 g-mb-30">
+                            <div class="popular-tours-item">
+                                <div class="img-wrapper img-wrapper--shadow">
+                                    <img src="{{ url('front/img/3.png') }}" alt="ALT" class="img-responsive">
+                                </div>
+                                <div class="popular-tours-item-info blog-grid">
+                                    <div class="popular-tours-item-info-inner">
+                                        <h3><em>Infografis Bencana Tahun 2022</em></h3>
+                                    </div>
+                                </div>
+                                <a href="" class="popular-tours-item__more"></a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-xs-6 col-2xs-12 g-mb-30">
+                            <div class="popular-tours-item">
+                                <div class="img-wrapper img-wrapper--shadow">
+                                    <img src="{{ url('front/img/3.png') }}" alt="ALT" class="img-responsive">
+                                </div>
+                                <div class="popular-tours-item-info blog-grid">
+                                    <div class="popular-tours-item-info-inner">
+                                        <h3><em>Infografis Bencana Tahun 2022</em></h3>
+                                    </div>
+                                </div>
+                                <a href="" class="popular-tours-item__more"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- ======= Testimonials Section ======= -->
         <section id="testimonials" class="testimonials section-bg">
-            <div class="container" data-aos="fade-up">
-
-                <div class="section-title">
-                    <h2>Testimonials</h2>
-                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-                        consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
-                        fugiat sit in iste officiis commodi quidem hic quas.</p>
-                </div>
-
+            <div class="container-f" data-aos="fade-up">
                 <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
                     <div class="swiper-wrapper">
-
-                        <div class="swiper-slide">
-                            <div class="testimonial-item">
-                                <img src="{{ url('front/img/logo-bpbd.png') }}" class="testimonial-img" alt="">
-                                <h3>Saul Goodman</h3>
-                                <h4>Ceo &amp; Founder</h4>
+                        @foreach ($link as $l)
+                            <div class="swiper-slide">
+                                <div class="testimonial-item">
+                                    <img src="{{ url('storage/link/' . $l->gambar) }}" class="testimonial-img"
+                                        alt="">
+                                </div>
                             </div>
-                        </div><!-- End testimonial item -->
-                        <div class="swiper-slide">
-                            <div class="testimonial-item">
-                                <img src="{{ url('front/img/logo-bpbd.png') }}" class="testimonial-img" alt="">
-                                <h3>Saul Goodman</h3>
-                                <h4>Ceo &amp; Founder</h4>
-                            </div>
-                        </div><!-- End testimonial item -->
-                        <div class="swiper-slide">
-                            <div class="testimonial-item">
-                                <img src="{{ url('front/img/logo-bpbd.png') }}" class="testimonial-img" alt="">
-                                <h3>Saul Goodman</h3>
-                                <h4>Ceo &amp; Founder</h4>
-                            </div>
-                        </div><!-- End testimonial item -->
-                        <div class="swiper-slide">
-                            <div class="testimonial-item">
-                                <img src="{{ url('front/img/logo-bpbd.png') }}" class="testimonial-img" alt="">
-                                <h3>Saul Goodman</h3>
-                                <h4>Ceo &amp; Founder</h4>
-                            </div>
-                        </div><!-- End testimonial item -->
-
+                        @endforeach
+                        <!-- End testimonial item -->
                     </div>
                     <div class="swiper-pagination"></div>
                 </div>
-
             </div>
         </section><!-- End Testimonials Section -->
     </main>

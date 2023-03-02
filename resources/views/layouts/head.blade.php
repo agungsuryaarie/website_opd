@@ -34,9 +34,10 @@
 
     {{-- blog style --}}
     <link href="{{ url('front/css/blog.style.css') }}" rel="stylesheet">
+    <link href="{{ url('front/css/plugins.css') }}" rel="stylesheet">
+    <link href="{{ url('front/css/travel.style.css') }}" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="{{ url('front/DataTables/datatables.min.css') }}">
-
 
 
 

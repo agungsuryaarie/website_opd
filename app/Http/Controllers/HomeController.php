@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Banner;
 use App\Models\Slideshow;
 use App\Models\Berita;
+use App\Models\Link;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -11,11 +13,20 @@ class HomeController extends Controller
     public function index()
     {
         $slideshow = Slideshow::orderBy('id', 'desc')->limit(3)->get();
-        $berita = Berita::orderBy('id', 'desc')->limit(3)->get();
+        // $posts = Berita::orderBy('id', 'desc')->limit(3)->get();
+        $link = Link::orderBy('id', 'desc')->get();
+        $banner = Banner::orderBy('id', 'desc')->limit(1)->get();
+        $post_dinas = Berita::orderBy('id', 'desc')->where('kategori', '=', 'Dinas')->limit(1)->get();
+        $post_pemerintahan = Berita::orderBy('id', 'desc')->where('kategori', '=', 'Pemerintahan')->limit(3)->get();
+        $post_latest = Berita::orderBy('id', 'desc')->where('kategori', '=', 'Dinas')->limit(5)->get();
 
         return view('home', compact(
             'slideshow',
-            'berita'
+            'link',
+            'banner',
+            'post_dinas',
+            'post_latest',
+            'post_pemerintahan'
 
         ));
     }

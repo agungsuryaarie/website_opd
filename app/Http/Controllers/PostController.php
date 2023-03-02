@@ -11,7 +11,6 @@ class PostController extends Controller
     {
         $title = 'Semua Berita';
         $post = Berita::orderBy('id', 'desc')->latest()->paginate(9);
-        // dd($post);
         return view('post', compact('post', 'title'));
     }
 
@@ -26,7 +25,6 @@ class PostController extends Controller
     {
         $title = 'Kategori Dinas';
         $post_dinas = Berita::orderBy('id', 'desc')->where('kategori', '=', 'Dinas')->latest()->paginate(12);
-        // dd($post_dinas);
         return view('post_dinas', compact('post_dinas', 'title'));
     }
 
