@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Galeri;
+use App\Models\Foto;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
@@ -113,11 +114,52 @@ class GaleriController extends Controller
     }
 
 
-    public function tambah_foto()
+    public function tambah_foto($id)
     {
         $menu = 'Tambah Foto';
-        // $galeri = Galeri::latest()->get();
+        $galery = Galeri::where('id', $id)->first();
+        $foto = Foto::where('galeri_id', $id)->get();
+        return view('admin.galeri.tambah_foto', compact('menu', 'galery', 'foto'));
+    }
 
-        return view('admin.galeri.tambah_foto', compact('menu'));
+    public function foto_store(Request $request, $id)
+    {
+        $message = array(
+            'foto.required' => 'Foto harus diupload.',
+            'foto.images' => 'File harus image.',
+            'foto.mimes' => 'Foto harus jpeg,png,jpg.',
+            'foto.max' => 'File maksimal 1MB.',
+        );
+        $validator = Validator::make($request->all(), [
+            'foto' => 'required|image|mimes:jpeg,png,jpg|max:1024',
+        ], $message);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
+        if ($request->hasFile('foto')) {
+            $img = $request->file('foto');
+            $img->storeAs('public/galeri', $img->hashName());
+
+            Foto::insert([
+                'galeri_id' => $id,
+                'foto' => $img->hashName(),
+            ]);
+        }
+        return redirect()->route('galeri.tambah_foto', $id)->with(['success' => 'Data Berhasil DiTambahkan!']);
+    }
+
+    public function foto_destroy($galeri_id, $id)
+    {
+        $foto = Foto::find($id);
+        //delete image
+        Storage::delete('public/galeri/' . $foto->foto);
+
+        //delete slideshow
+        $foto->delete();
+
+        //redirect to index
+        return redirect()->route('galeri.tambah_foto', $galeri_id)->with(['success' => 'Data Berhasil Dihapus!']);
     }
 }

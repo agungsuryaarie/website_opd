@@ -46,7 +46,7 @@
                                             <td><img src="{{ url('storage/galeri/' . $g->cover) }}" style="width:100px">
                                             </td>
                                             <td class="text-center">
-                                                <a href="{{ route('galeri.tambah_foto') }}"
+                                                <a href="{{ route('galeri.tambah_foto', $g->id) }}"
                                                     class="btn btn-xs btn-success"><i class="fas fa-image"
                                                         title="Foto"></i></a>
                                                 <form

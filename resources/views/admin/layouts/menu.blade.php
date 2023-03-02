@@ -26,8 +26,22 @@
                 </p>
             </a>
         </li>
-        <li class="nav-item">
-            <a href="#" class="nav-link">
+        <li
+            class="nav-item {{ request()->segment(1) == 'galeri' ||
+            request()->segment(1) == 'video' ||
+            request()->segment(1) == 'slideshow' ||
+            request()->segment(1) == 'banner' ||
+            request()->segment(1) == 'file-download'
+                ? 'menu-open'
+                : '' }}">
+            <a href="#"
+                class="nav-link {{ request()->segment(1) == 'galeri' ||
+                request()->segment(1) == 'video' ||
+                request()->segment(1) == 'slideshow' ||
+                request()->segment(1) == 'banner' ||
+                request()->segment(1) == 'file-download'
+                    ? 'active'
+                    : '' }}">
                 <i class="nav-icon fas fa-images"></i>
                 <p>
                     Media

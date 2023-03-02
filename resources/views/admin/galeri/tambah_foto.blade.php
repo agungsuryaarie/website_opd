@@ -26,21 +26,25 @@
                                 <h5> Tambah Foto Galeri</h5>
                             </div>
                         </div>
-                        <form>
+                        <form action="{{ route('foto.store', $galery->id) }}" method="POST" enctype="multipart/form-data">
+                            @csrf
                             <div class="card-body">
-                                <p>Judul Album Galeri :<b> Bupati Zahir Kembali Tinjau Pembangunan Taman Sei Bejangkar
-                                        Sekaligus Bergotong Royong</b></p>
+                                <p>Judul Album Galeri :<b> {{ $galery->judul }}</b></p>
                                 <div class="form-group">
                                     <label for="">Cover Album :</label><br>
-                                    <img src="{{ url('front/img/baner2.png') }}" style="width: 70%;">
+                                    <img src="{{ url('storage/galeri/' . $galery->cover) }}" style="width: 70%;">
                                 </div>
                                 <div class="form-group">
                                     <label>Tambah Foto :</label>
-                                    <input type="file" class="form-control" type="text" name="" accept="">
+                                    <input type="file" class="form-control  @error('foto') is-invalid @enderror"
+                                        type="text" name="foto" accept=".jpg, .jpeg, .png">
+                                    @error('foto')
+                                        <span class="text-danger text-sm">{{ $message }}</span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="card-footer">
-                                <a href="" class="btn btn-danger btn-sm">Kembali</a>
+                                <a href="{{ route('galeri.index') }}" class="btn btn-danger btn-sm">Kembali</a>
                                 <button type="submit" class="btn btn-primary btn-sm">Simpan</button>
                             </div>
                         </form>
@@ -64,16 +68,26 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td></td>
-                                        <td><img src="" style="width:100px"></td>
-                                        <td class="text-center">
-                                            <a href="galeri/tambah_foto" class="btn btn-xs btn-success"><i
-                                                    class="fas fa-image" title="Foto"></i></a>
-                                            <button type="submit" class="btn btn-xs btn-danger"><i class="fas fa-trash"
-                                                    title="Hapus"></i></button>
-                                        </td>
-                                    </tr>
+                                    @php
+                                        $no = 1;
+                                    @endphp
+                                    @foreach ($foto as $f)
+                                        <tr>
+                                            <td>{{ $no++ }}</td>
+                                            <td><img src="{{ url('storage/galeri/' . $f->foto) }}" style="width:100px"></td>
+                                            <td class="text-center">
+                                                <form
+                                                    onsubmit="return confirm('Apakah Anda Yakin ingin Menghapus Data ini  ?');"
+                                                    action="{{ route('foto.destroy', ['galeri_id' => $f->galeri_id, 'id' => $f->id]) }}"
+                                                    method="POST">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-xs btn-danger"><i
+                                                            class="fas fa-trash" title="Hapus"></i></button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

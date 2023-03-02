@@ -60,7 +60,9 @@ Route::middleware('auth')->group(function () {
     Route::post('/galeri/store', [GaleriController::class, 'store'])->name('galeri.store');
     Route::put('/galeri/{id}/update', [GaleriController::class, 'update'])->name('galeri.update');
     Route::delete('/galeri/{id}/destroy', [GaleriController::class, 'destroy'])->name('galeri.destroy');
-    Route::get('/galeri/foto', [GaleriController::class, 'tambah_foto'])->name('galeri.tambah_foto');
+    Route::get('/galeri/foto/{id}', [GaleriController::class, 'tambah_foto'])->name('galeri.tambah_foto');
+    Route::post('/foto/store/{id}', [GaleriController::class, 'foto_store'])->name('foto.store');
+    Route::delete('/foto/destroy/{galeri_id}/{id}', [GaleriController::class, 'foto_destroy'])->name('foto.destroy');
 });
 
 Route::middleware('auth')->group(function () {
