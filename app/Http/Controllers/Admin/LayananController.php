@@ -3,58 +3,59 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Halaman;
+use App\Models\Layanan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
-class HalamanController extends Controller
+
+class LayananController extends Controller
 {
     public function index()
     {
-        $menu = 'Profile';
-        $halaman = Halaman::latest()->paginate(5);
+        $menu = 'Layanan';
+        $layanan = Layanan::latest()->paginate(5);
 
-        return view('admin.halaman.index', compact('menu', 'halaman'));
+        return view('admin.layanan.index', compact('menu', 'layanan'));
     }
 
     public function create()
     {
-        $menu = 'Tambah menu Profile';
+        $menu = 'Tambah menu Layanan';
 
-        return view('admin.halaman.create', compact('menu'));
+        return view('admin.layanan.create', compact('menu'));
     }
 
-    public function store(Request $request, Halaman $halaman)
+    public function store(Request $request, Layanan $layanan)
     {
         //validate form
         $this->validate($request, [
             'urutan' => 'required',
             'judul' => 'required|string|max:200',
-            'isi_halaman' => 'required',
+            'isi_layanan' => 'required',
             'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         //upload image
         $img = $request->file('gambar');
-        $img->storeAs('public/halaman', $img->hashName());
+        $img->storeAs('public/layanan', $img->hashName());
 
         //create post
-        $halaman->create([
+        $layanan->create([
             'urutan' => $request->urutan,
             'kategori' => $request->kategori,
             'judul' => $request->judul,
             'slug' => Str::slug($request->judul),
-            'isi_halaman' => $request->isi_halaman,
+            'isi_layanan' => $request->isi_layanan,
             'tanggal' => date('Y-m-d'),
             'jam' => date('H:i:s'),
             'gambar' => $img->hashName(),
         ]);
         //redirect to index
-        return redirect()->route('halaman.index')->with(['success' => 'Data Berhasil Disimpan ke Database!']);
+        return redirect()->route('layanan.index')->with(['success' => 'Data Berhasil Disimpan ke Database!']);
     }
 
-    public function show(Halaman $halaman)
+    public function show(Layanan $layanan)
     {
         return view('admin.halaman.show', compact('halaman'));
     }
@@ -62,19 +63,19 @@ class HalamanController extends Controller
     public function edit($id)
     {
         $menu = 'Edit menu Profile';
-        $halaman = Halaman::find($id);
+        $layanan = Layanan::find($id);
 
-        return view('admin.halaman.edit', compact('menu', 'halaman'));
+        return view('admin.layanan.edit', compact('menu', 'layanan'));
     }
 
     public function update($id, Request $request)
     {
-        $halaman = Halaman::find($id);
+        $layanan = Layanan::find($id);
         //validate form
         $this->validate($request, [
             'urutan' => 'required',
             'judul' => 'required|string|max:200',
-            'isi_halaman' => 'required',
+            'isi_layanan' => 'required',
             'gambar' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
@@ -84,51 +85,51 @@ class HalamanController extends Controller
 
             //upload image
             $img = $request->file('gambar');
-            $img->storeAs('public/halaman', $img->hashName());
+            $img->storeAs('public/layanan', $img->hashName());
 
             //delete old image
-            Storage::delete('public/halaman/' . $halaman->gambar);
+            Storage::delete('public/layanan/' . $layanan->gambar);
 
             //update Halaman with new image
-            $halaman->update([
+            $layanan->update([
                 'urutan' => $request->urutan,
                 'kategori' => $request->kategori,
                 'judul' => $request->judul,
                 'slug' => Str::slug($request->judul),
-                'isi_halaman' => $request->isi_halaman,
+                'isi_layanan' => $request->isi_layanan,
                 'tanggal' => date('Y-m-d'),
                 'jam' => date('H:i:s'),
                 'gambar' => $img->hashName(),
             ]);
         } else {
             //update Halaman without image
-            $halaman->update([
+            $layanan->update([
                 'urutan' => $request->urutan,
                 'kategori' => $request->kategori,
                 'judul' => $request->judul,
                 'slug' => Str::slug($request->judul),
-                'isi_halaman' => $request->isi_halaman,
+                'isi_layanan' => $request->isi_layanan,
                 'tanggal' => date('Y-m-d'),
                 'jam' => date('H:i:s'),
             ]);
 
 
             //redirect to index
-            return redirect()->route('halaman.index')->with(['success' => 'Data Berhasil Disimpan ke Database!']);
+            return redirect()->route('layanan.index')->with(['success' => 'Data Berhasil Disimpan ke Database!']);
         }
     }
 
     public function destroy($id)
     {
 
-        $halaman = Halaman::find($id);
+        $layanan = Layanan::find($id);
         //delete image
-        Storage::delete('public/halaman/' . $halaman->gambar);
+        Storage::delete('public/layanan/' . $layanan->gambar);
 
         //delete berita
-        $halaman->delete();
+        $layanan->delete();
 
         //redirect to index
-        return redirect()->route('halaman.index')->with(['success' => 'Data Berhasil Dihapus!']);
+        return redirect()->route('layanan.index')->with(['success' => 'Data Berhasil Dihapus!']);
     }
 }

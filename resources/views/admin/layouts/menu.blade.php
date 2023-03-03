@@ -10,10 +10,19 @@
         </li>
         <li class="nav-item">
             <a href="{{ route('halaman.index') }}"
-                class="nav-link {{ request()->segment(1) == 'profile' ? 'active' : '' }}">
+                class="nav-link {{ request()->segment(1) == 'halaman' ? 'active' : '' }}">
                 <i class="nav-icon fa fa-address-card"></i>
                 <p>
                     Menu Profile
+                </p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="{{ route('layanan.index') }}"
+                class="nav-link {{ request()->segment(1) == 'layanan' ? 'active' : '' }}">
+                <i class="nav-icon fa fa-window-restore"></i>
+                <p>
+                    Layanan
                 </p>
             </a>
         </li>

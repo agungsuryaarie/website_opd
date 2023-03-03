@@ -3,6 +3,7 @@
 // use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\HalamanController;
+use App\Http\Controllers\Admin\LayananController;
 use App\Http\Controllers\Admin\BeritaController;
 use App\Http\Controllers\Admin\GaleriController;
 use App\Http\Controllers\Admin\VideoController;
@@ -43,6 +44,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/halaman/{id}/edit', [HalamanController::class, 'edit'])->name('halaman.edit');
     Route::put('/halaman/{id}/update', [HalamanController::class, 'update'])->name('halaman.update');
     Route::delete('/halaman/{id}/destroy', [HalamanController::class, 'destroy'])->name('halaman.destroy');
+});
+Route::middleware('auth')->group(function () {
+    Route::get('/layanan', [LayananController::class, 'index'])->name('layanan.index');
+    Route::get('/layanan/create', [LayananController::class, 'create'])->name('layanan.create');
+    Route::post('/layanan/store', [LayananController::class, 'store'])->name('layanan.store');
+    Route::get('/layanan/{id}/edit', [LayananController::class, 'edit'])->name('layanan.edit');
+    Route::put('/layanan/{id}/update', [LayananController::class, 'update'])->name('layanan.update');
+    Route::delete('/layanan/{id}/destroy', [LayananController::class, 'destroy'])->name('layanan.destroy');
 });
 
 Route::middleware('auth')->group(function () {

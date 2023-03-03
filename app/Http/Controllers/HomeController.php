@@ -7,6 +7,7 @@ use App\Models\Slideshow;
 use App\Models\Berita;
 use App\Models\Link;
 use App\Models\Halaman;
+use App\Models\Layanan;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -21,6 +22,7 @@ class HomeController extends Controller
         $post_pemerintahan = Berita::orderBy('id', 'desc')->where('kategori', '=', 'Pemerintahan')->limit(3)->get();
         $post_latest = Berita::orderBy('id', 'desc')->where('kategori', '=', 'Dinas')->limit(5)->get();
         $halaman = Halaman::orderBy('id', 'asc')->get();
+        $layanan = Layanan::orderBy('id', 'asc')->get();
         return view('home', compact(
             'slideshow',
             'link',
@@ -28,7 +30,8 @@ class HomeController extends Controller
             'post_dinas',
             'post_latest',
             'post_pemerintahan',
-            'halaman'
+            'halaman',
+            'layanan'
 
         ));
     }

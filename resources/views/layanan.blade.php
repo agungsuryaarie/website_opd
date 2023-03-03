@@ -5,13 +5,13 @@
         <div class="container">
             <div class="row-news">
                 <div class="card-details">
-                    <img src="{{ url('storage/halaman', $profil->gambar) }}">
+                    <img src="{{ url('storage/layanan', $lapub->gambar) }}">
                     <ul class="blog-grid-info">
-                        <li><i class="bi bi-calendar"></i> {{ $profil->tanggal }}</li>
-                        <li><i class="bi bi-clock"></i> {{ $profil->jam }} WIB</li>
+                        <li><i class="bi bi-calendar"></i> {{ $lapub->tanggal }}</li>
+                        <li><i class="bi bi-clock"></i> {{ $lapub->jam }} WIB</li>
                     </ul>
-                    <h3>{{ $profil->judul }}</h3>
-                    <p>{!! $profil->isi_halaman !!}</p>
+                    <h3>{{ $lapub->judul }}</h3>
+                    <p>{!! $lapub->isi_halaman !!}</p>
                 </div>
 
 
