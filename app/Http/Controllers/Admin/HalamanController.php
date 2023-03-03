@@ -54,6 +54,11 @@ class HalamanController extends Controller
         return redirect()->route('halaman.index')->with(['success' => 'Data Berhasil Disimpan ke Database!']);
     }
 
+    public function show(Halaman $halaman)
+    {
+        return view('admin.halaman.show', compact('halaman'));
+    }
+
     public function edit($id)
     {
         $menu = 'Edit menu Profile';

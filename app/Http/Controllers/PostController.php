@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Berita;
+use App\Models\Halaman;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -11,34 +12,39 @@ class PostController extends Controller
     {
         $title = 'Semua Berita';
         $post = Berita::orderBy('id', 'desc')->latest()->paginate(9);
-        return view('post', compact('post', 'title'));
+        $halaman = Halaman::orderBy('id', 'asc')->get();
+        return view('post', compact('post', 'title', 'halaman'));
     }
 
     public function show(Berita $post)
     {
         $title = $post->title;
-        $recent_post = Berita::limit(8)->get();;
-        return view('post_show', compact('title', 'post', 'recent_post'));
+        $recent_post = Berita::limit(4)->get();;
+        $halaman = Halaman::orderBy('id', 'asc')->get();
+        return view('post_show', compact('title', 'post', 'recent_post', 'halaman'));
     }
 
     public function dinas()
     {
         $title = 'Kategori Dinas';
         $post_dinas = Berita::orderBy('id', 'desc')->where('kategori', '=', 'Dinas')->latest()->paginate(12);
-        return view('post_dinas', compact('post_dinas', 'title'));
+        $halaman = Halaman::orderBy('id', 'asc')->get();
+        return view('post_dinas', compact('post_dinas', 'title', 'halaman'));
     }
 
     public function pemerintahan()
     {
         $title = 'Kategori Pemerintahan';
         $post_pemerintahan = Berita::orderBy('id', 'desc')->where('kategori', '=', 'Pemerintahan')->latest()->paginate(12);
-        return view('post_pemerintahan', compact('post_pemerintahan', 'title'));
+        $halaman = Halaman::orderBy('id', 'asc')->get();
+        return view('post_pemerintahan', compact('post_pemerintahan', 'title', 'halaman'));
     }
 
     public function umum()
     {
         $title = 'Kategori Pemerintahan';
         $post_umum = Berita::orderBy('id', 'desc')->where('kategori', '=', 'Umum')->latest()->paginate(12);
-        return view('post_umum', compact('post_umum', 'title'));
+        $halaman = Halaman::orderBy('id', 'asc')->get();
+        return view('post_umum', compact('post_umum', 'title', 'halaman'));
     }
 }

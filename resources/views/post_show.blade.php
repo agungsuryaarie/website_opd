@@ -6,6 +6,10 @@
             <div class="row-news">
                 <div class="card-details">
                     <img src="{{ url('storage/berita/' . $post->foto) }}">
+                    <ul class="blog-grid-info">
+                        <li><i class="bi bi-calendar"></i> {{ $post->tanggal }}</li>
+                        <li><i class="bi bi-clock"></i> {{ $post->jam }} WIB</li>
+                    </ul>
                     <h3>{{ $post->judul }}</h3>
                     <p>{!! $post->isi !!}</p>
                 </div>
