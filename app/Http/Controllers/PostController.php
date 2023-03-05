@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Berita;
 use App\Models\Halaman;
 use App\Models\Layanan;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -15,7 +16,8 @@ class PostController extends Controller
         $post = Berita::orderBy('id', 'desc')->latest()->paginate(9);
         $halaman = Halaman::orderBy('id', 'asc')->get();
         $layanan = Layanan::orderBy('id', 'asc')->get();
-        return view('post', compact('post', 'title', 'halaman', 'layanan'));
+        $setting = Setting::first();
+        return view('post', compact('post', 'title', 'halaman', 'layanan', 'setting'));
     }
 
     public function show(Berita $post)
@@ -24,7 +26,8 @@ class PostController extends Controller
         $recent_post = Berita::limit(4)->get();
         $halaman = Halaman::orderBy('id', 'asc')->get();
         $layanan = Layanan::orderBy('id', 'asc')->get();
-        return view('post_show', compact('title', 'post', 'recent_post', 'halaman', 'layanan'));
+        $setting = Setting::first();
+        return view('post_show', compact('title', 'post', 'recent_post', 'halaman', 'layanan', 'setting'));
     }
 
     public function dinas()
@@ -33,7 +36,8 @@ class PostController extends Controller
         $post_dinas = Berita::orderBy('id', 'desc')->where('kategori', '=', 'Dinas')->latest()->paginate(12);
         $halaman = Halaman::orderBy('id', 'asc')->get();
         $layanan = Layanan::orderBy('id', 'asc')->get();
-        return view('post_dinas', compact('post_dinas', 'title', 'halaman', 'layanan'));
+        $setting = Setting::first();
+        return view('post_dinas', compact('post_dinas', 'title', 'halaman', 'layanan', 'setting'));
     }
 
     public function pemerintahan()
@@ -42,7 +46,8 @@ class PostController extends Controller
         $post_pemerintahan = Berita::orderBy('id', 'desc')->where('kategori', '=', 'Pemerintahan')->latest()->paginate(12);
         $halaman = Halaman::orderBy('id', 'asc')->get();
         $layanan = Layanan::orderBy('id', 'asc')->get();
-        return view('post_pemerintahan', compact('post_pemerintahan', 'title', 'halaman', 'layanan'));
+        $setting = Setting::first();
+        return view('post_pemerintahan', compact('post_pemerintahan', 'title', 'halaman', 'layanan', 'setting'));
     }
 
     public function umum()
@@ -51,6 +56,7 @@ class PostController extends Controller
         $post_umum = Berita::orderBy('id', 'desc')->where('kategori', '=', 'Umum')->latest()->paginate(12);
         $halaman = Halaman::orderBy('id', 'asc')->get();
         $layanan = Layanan::orderBy('id', 'asc')->get();
-        return view('post_umum', compact('post_umum', 'title', 'halaman', 'layanan'));
+        $setting = Setting::first();
+        return view('post_umum', compact('post_umum', 'title', 'halaman', 'layanan', 'setting'));
     }
 }

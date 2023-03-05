@@ -32,7 +32,7 @@
                                 <h2 class="flex-grow-1 bd-highlight">Berita Dinas</h2>
                                 <div class="bd-highlight" id="event-more">
                                     <div class="view-more">
-                                        <a href="https://smartcity.batubarakab.go.id/berita-api"
+                                        <a href="{{ route('post.dinas') }}"
                                             class="d-flex align-items-center jss-cinfo text-hover-primary mb-10">Lihat semua
                                             <i
                                                 class="fad fa-chevron-double-right d-none d-md-block d-lg-block py-1 px-1 jss-cinfo"></i>>></a>
@@ -48,15 +48,13 @@
                                             <img src="{{ url('storage/berita', $post->foto) }}" style="width: 100%"
                                                 alt="">
                                         </div>
-                                        <h3><a href="blog_single.html">{{ $post->judul }}</a>
+                                        <h3><a href="{{ route('post.show', $post->slug) }}">{{ $post->judul }}</a>
                                         </h3>
                                         <ul class="blog-grid-info">
                                             <li><i class="bi bi-calendar"></i> {{ $post->tanggal }}</li>
                                             <li><i class="bi bi-clock"></i> {{ $post->jam }} WIB</li>
                                         </ul>
-                                        <p>Nulla gravida sit amet odio vel posuere. Proin maximus est diam, sed iaculis arcu
-                                            ultrices sed.
-                                            Quisque nisi diam, sodales sit amet diam ut, bibendum interdum metus.</p>
+                                        <p> {!! Str::limit($post->isi, 150) !!}</p>
                                         <a class="r-more" href="blog_single.html">Read More</a>
                                     </div>
                                 </div>
@@ -70,7 +68,7 @@
                                             <img src="{{ url('storage/berita', $post->foto) }}" alt="">
                                         </div>
                                         <div class="blog-thumb-desc">
-                                            <h3><a href="blog_single.html">{{ $post->judul }}</a></h3>
+                                            <h3><a href="{{ route('post.show', $post->slug) }}">{{ $post->judul }}</a></h3>
                                             <ul class="blog-thumb-info">
                                                 <li>Mar 6, 2015</li>
                                                 <li><a href="#"><i class="fa fa-comments"></i> 0</a></li>
@@ -99,7 +97,7 @@
                         <h2 class="flex-grow-1 bd-highlight">Berita Pemerintahan</h2>
                         <div class="bd-highlight" id="event-more">
                             <div class="view-more">
-                                <a href="https://smartcity.batubarakab.go.id/berita-api"
+                                <a href="{{ route('post.pemerintahan') }}"
                                     class="d-flex align-items-center jss-cinfo text-hover-primary mb-10">Lihat semua
                                     <i
                                         class="fad fa-chevron-double-right d-none d-md-block d-lg-block py-1 px-1 jss-cinfo"></i>>></a>

@@ -129,10 +129,10 @@ h6 {
 # Header
 --------------------------------------------------------------*/
 #header {
-  transition: all 0.5s;
+  transition: all 0.1s;
   z-index: 997;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
-  padding: 20px 0;
+  padding: 10px 0;
 }
 
 #header.header-scrolled,
@@ -158,7 +158,7 @@ h6 {
 }
 
 #header .logo img {
-  max-height: 40px;
+  max-height: 62px;
 }
 
 /*--------------------------------------------------------------
@@ -1547,7 +1547,8 @@ section {
 #footer {
   color: #fff;
   font-size: 14px;
-  background: linear-gradient(45deg, rgb(34 18 127 / 90%) 0%, rgb(24 32 206 / 90%) 100%), url(../img/hero-bg.jpg) center center no-repeat;
+  background: #31338c;
+  /* background: linear-gradient(45deg, rgb(34 18 127 / 90%) 0%, rgb(24 32 206 / 90%) 100%), url(../img/hero-bg.jpg) center center no-repeat; */
   background-size: cover;
 }
 
@@ -1797,52 +1798,7 @@ section {
         }
       }
 
-      .row-card {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .cardpokersize {
-      flex: 0 1 23rem;
-      display: flex;
-      align-items: center;
-      margin: 20px 18px 44px;
-      flex-direction: column;
-      background: #fff;
-      transition: all 0.3s ease-in-out;
-      box-shadow: 0 0 15px rgb(0 0 0 / 5%);
-      border-radius: 15px;
-      padding: 17px 18px 17px;
-      /* padding: 30px; */
-      align-self: normal;
-  }
-
-  .cardpokersize img {
-    width: 100%;
-    height: 255px;
-    object-fit: cover;
-    transition: 0.5s;
-    object-position: center;
-    border-radius: 15px;
-    margin: 0 auto 25px;
-}
-
-.cardpokersize:hover img{
-  transform: scale(0.9);
-}
-
-.cardpokersize h3{
-  font-size: 17px;
-  font-weight: 600;
-  color: #3f3975;
-  margin-bottom: 1em;
-}
-.cardpokersize p{
-  font-size: 14px;
-  text-align: center;
-}
+    
 
 .section-tittle h3{
   font-size: 2em;

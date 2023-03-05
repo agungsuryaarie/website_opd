@@ -7,6 +7,7 @@ use App\Http\Controllers\DownloadController;
 use App\Http\Controllers\HalamanProfilController;
 use App\Http\Controllers\LayananPublikController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\MediaController;
 
 
 
@@ -17,6 +18,8 @@ use App\Http\Controllers\PostController;
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
 Route::get('/kontak', [KontakController::class, 'index'])->name('kontak.index');
 Route::get('/download', [DownloadController::class, 'index'])->name('download.index');
+Route::get('/foto', [MediaController::class, 'index'])->name('media.index');
+Route::get('/foto/{slug}', [MediaController::class, 'show'])->name('media.show');
 Route::get('/post', [PostController::class, 'index'])->name('post.index');
 Route::get('/post/{post:slug}', [PostController::class, 'show'])->name('post.show');
 Route::get('/post_dinas', [PostController::class, 'dinas'])->name('post.dinas');

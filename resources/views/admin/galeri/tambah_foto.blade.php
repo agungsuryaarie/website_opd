@@ -74,7 +74,7 @@
                                     @foreach ($foto as $f)
                                         <tr>
                                             <td>{{ $no++ }}</td>
-                                            <td><img src="{{ url('storage/galeri/' . $f->foto) }}" style="width:100px"></td>
+                                            <td><img src="{{ url('storage/foto/' . $f->foto) }}" style="width:100px"></td>
                                             <td class="text-center">
                                                 <form
                                                     onsubmit="return confirm('Apakah Anda Yakin ingin Menghapus Data ini  ?');"

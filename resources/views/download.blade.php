@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <section id="download" class="download section-bg">
-        <div class="container">
+    <div class="download">
+        <div class="container mb-30">
             <div class="row-download">
                 <div class="col-10">
                     <div class="card">
@@ -35,7 +35,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 @endsection
 
 @section('script')

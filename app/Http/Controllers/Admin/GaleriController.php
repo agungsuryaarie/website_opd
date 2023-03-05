@@ -140,7 +140,7 @@ class GaleriController extends Controller
 
         if ($request->hasFile('foto')) {
             $img = $request->file('foto');
-            $img->storeAs('public/galeri', $img->hashName());
+            $img->storeAs('public/foto', $img->hashName());
 
             Foto::insert([
                 'galeri_id' => $id,
@@ -154,7 +154,7 @@ class GaleriController extends Controller
     {
         $foto = Foto::find($id);
         //delete image
-        Storage::delete('public/galeri/' . $foto->foto);
+        Storage::delete('public/foto/' . $foto->foto);
 
         //delete slideshow
         $foto->delete();
