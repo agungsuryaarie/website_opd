@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Halaman;
 use App\Models\Layanan;
 use App\Models\Berita;
+use App\Models\Banner;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 
 class HalamanProfilController extends Controller
@@ -14,8 +16,10 @@ class HalamanProfilController extends Controller
         $halaman = Halaman::orderBy('id')->get();
         $profil = Halaman::where('slug', $slug)->orderBy('id')->first();
         $recent_post = Berita::limit(4)->get();
+        $banner = Banner::orderBy('id', 'desc')->limit(1)->get();
         $layanan = Layanan::orderBy('id', 'asc')->get();
-        return view('halamanprofil', compact('halaman', 'profil', 'recent_post', 'layanan'));
+        $setting = Setting::first();
+        return view('halamanprofil', compact('halaman', 'profil', 'recent_post', 'layanan', 'setting', 'banner'));
     }
 
     // public function profil(Halaman $halaman)

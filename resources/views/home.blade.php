@@ -70,8 +70,8 @@
                                         <div class="blog-thumb-desc">
                                             <h3><a href="{{ route('post.show', $post->slug) }}">{{ $post->judul }}</a></h3>
                                             <ul class="blog-thumb-info">
-                                                <li>Mar 6, 2015</li>
-                                                <li><a href="#"><i class="fa fa-comments"></i> 0</a></li>
+                                                <li><i class="bi bi-calendar"></i> {{ $post->tanggal }}</li>
+                                                <li><i class="bi bi-clock"></i> {{ $post->jam }} WIB</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -110,8 +110,11 @@
                 @foreach ($post_pemerintahan as $post)
                     <div class="cardpokersize">
                         <img src="{{ url('storage/berita/' . $post->foto) }}">
-                        {{-- <img src="{{ url('front/img/2.jpeg') }}"> --}}
-                        <h3>{{ $post->judul }}</h3>
+                        <ul class="blog-info">
+                            <li><i class="bi bi-calendar"></i> {{ $post->tanggal }}</li>
+                            <li><i class="bi bi-clock"></i> {{ $post->jam }} WIB</li>
+                        </ul>
+                        <h3><a href="{{ route('post.show', $post->slug) }}">{{ $post->judul }}</a></h3>
                         <p>Input data perencanaan lima tahunan yang dilakukan oleh fungsi perencana pada Pemerintah
                             Daerah
                         </p>

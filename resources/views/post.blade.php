@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <section id="features" class="services section-bg">
+    <div class="post section-bg">
         <div class="section-tittle">
             <h3>{{ $title }}</h3>
         </div>
@@ -17,5 +17,5 @@
             @endforeach
             {{ $post->links() }}
         </div>
-    </section>
+    </div>
 @endsection

@@ -1,15 +1,19 @@
 @extends('layouts.app')
 
 @section('content')
-    <section id="features" class="services section-bg">
+    <div class="post section-bg">
         <div class="section-tittle">
-            <h3>Features</h3>
+            <h3>{{ $title }}</h3>
         </div>
         <div class="row-card">
-            @foreach ($post_umum as $post)
+            @foreach ($post_umum as $pu)
                 <div class="cardpokersize">
-                    <img src="{{ url('storage/berita/' . $post->foto) }}">
-                    <h3><a href="{{ route('post.show', $post->slug) }}">{{ $post->judul }}</a></h3>
+                    <img src="{{ url('storage/berita/' . $pu->foto) }}">
+                    <ul class="blog-info">
+                        <li><i class="bi bi-calendar"></i> {{ $pu->tanggal }}</li>
+                        <li><i class="bi bi-clock"></i> {{ $pu->jam }} WIB</li>
+                    </ul>
+                    <h3><a href="{{ route('post.show', $pu->slug) }}">{{ $pu->judul }}</a></h3>
                     <p>Input data perencanaan lima tahunan yang dilakukan oleh fungsi perencana pada Pemerintah
                         Daerah
                     </p>
@@ -17,5 +21,5 @@
             @endforeach
             {{ $post_umum->links() }}
         </div>
-    </section>
+    </div>
 @endsection

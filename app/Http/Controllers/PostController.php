@@ -6,6 +6,7 @@ use App\Models\Berita;
 use App\Models\Halaman;
 use App\Models\Layanan;
 use App\Models\Setting;
+use App\Models\Banner;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -24,10 +25,11 @@ class PostController extends Controller
     {
         $title = $post->title;
         $recent_post = Berita::limit(4)->get();
+        $banner = Banner::orderBy('id', 'desc')->limit(1)->get();
         $halaman = Halaman::orderBy('id', 'asc')->get();
         $layanan = Layanan::orderBy('id', 'asc')->get();
         $setting = Setting::first();
-        return view('post_show', compact('title', 'post', 'recent_post', 'halaman', 'layanan', 'setting'));
+        return view('post_show', compact('title', 'post', 'recent_post', 'halaman', 'layanan', 'setting', 'banner'));
     }
 
     public function dinas()
@@ -52,7 +54,7 @@ class PostController extends Controller
 
     public function umum()
     {
-        $title = 'Kategori Pemerintahan';
+        $title = 'Kategori Umum';
         $post_umum = Berita::orderBy('id', 'desc')->where('kategori', '=', 'Umum')->latest()->paginate(12);
         $halaman = Halaman::orderBy('id', 'asc')->get();
         $layanan = Layanan::orderBy('id', 'asc')->get();
