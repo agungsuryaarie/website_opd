@@ -1,38 +1,34 @@
 @extends('layouts.app')
 
 @section('content')
-    <section id="contact" class="contact section-bg">
-        <div class="container" data-aos="fade-up">
-
+    <div class="contact section-bg">
+        <div class="container mb-30" data-aos="fade-up">
             <div class="section-title">
                 <h2>Contact</h2>
-                <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-                    consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat
-                    sit in iste officiis commodi quidem hic quas.</p>
             </div>
 
             <div class="row">
                 <div class="col-lg-6">
                     <div class="info-box mb-4">
                         <i class="bx bx-map"></i>
-                        <h3>Our Address</h3>
-                        <p>A108 Adam Street, New York, NY 535022</p>
+                        <h3>Alamat</h3>
+                        <p>{{ $setting->alamat }}</p>
                     </div>
                 </div>
 
                 <div class="col-lg-3 col-md-6">
                     <div class="info-box  mb-4">
                         <i class="bx bx-envelope"></i>
-                        <h3>Email Us</h3>
-                        <p>contact@example.com</p>
+                        <h3>Email</h3>
+                        <p>{{ $setting->email }}</p>
                     </div>
                 </div>
 
                 <div class="col-lg-3 col-md-6">
                     <div class="info-box  mb-4">
                         <i class="bx bx-phone-call"></i>
-                        <h3>Call Us</h3>
-                        <p>+1 5589 55488 55</p>
+                        <h3>Telepon</h3>
+                        <p>{{ $setting->telepon }}</p>
                     </div>
                 </div>
 
@@ -47,5 +43,5 @@
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 @endsection
