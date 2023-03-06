@@ -106,10 +106,19 @@
 <script src="{{ url('front/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
 <script src="{{ url('front/vendor/swiper/swiper-bundle.min.js') }}"></script>
 <script src="{{ url('front/vendor/php-email-form/validate.js') }}"></script>
+<script src="{{ url('front/js/app.js') }}"></script>
+<script src="{{ url('front/fancybox/source/jquery.fancybox.js') }}"></script>
+<script src="{{ url('front/fancybox/source/jquery.fancybox.pack.js') }}"></script>
+<script src="{{ url('front/js/style-switcher.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
+    integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <!-- Template Main JS File -->
 <script src="{{ url('front/js/main.js') }}"></script>
 <script src="{{ url('front/DataTables/datatables.min.js') }}"></script>
+
+
 {{-- <script type="text/javascript" src="<?= base_url() ?>template/DataTables/datatables.min.js"></script> --}}
 
 

@@ -1,25 +1,35 @@
 @extends('layouts.app')
 
 @section('content')
-    <section id="gallery" class="galeri">
-        <div class="container-f">
-            <div class="row">
-                @foreach ($img as $i)
-                    <div class="col-lg-12">
-                        <div class="gallery">
-                            <div class="gallery__column">
-                                <a href="https://unsplash.com/@jeka_fe" target="_blank" class="gallery__link">
-                                    <figure class="gallery__thumb">
-                                        <img src="{{ url('storage/foto' . $i->foto) }}" alt="Portrait by Jessica Felicio"
-                                            class="gallery__image">
-                                        <figcaption class="gallery__caption"></figcaption>
-                                    </figure>
-                                </a>
-                            </div>
-                        </div>
+    <!-- Four Columns -->
+    <div class="section-content">
+        <div class="container-f mb-30">
+            <div class="text-center margin-bottom-50">
+                <h2 class="title-v2 title-center">judul album</h2>
+            </div>
+
+            <div class="row  margin-bottom-30">
+                @foreach ($detail as $d)
+                    <div class="col-sm-3 sm-margin-bottom-30">
+                        <a href="{{ url('storage/foto/' . $d->foto) }}" rel="gallery2" class="fancybox img-hover-v1"
+                            title="Image 1">
+                            <span>
+                                <img class="img-responsive" src="{{ url('storage/foto/' . $d->foto) }}" alt="">
+                            </span>
+                        </a>
                     </div>
                 @endforeach
             </div>
         </div>
-    </section>
+    </div>
+@endsection
+
+@section('script')
+    <script>
+        jquery(document).ready(function() {
+            App.init();
+            FancyBox.initFancybox();
+            StyleSwitcher.initStyleSwitcher();
+        });
+    </script>
 @endsection

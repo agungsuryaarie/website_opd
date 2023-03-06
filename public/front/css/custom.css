@@ -2,18 +2,10 @@
     padding-top: 82px;
 }
 
-.download{
+.section-content{
   padding-top: 140px;
 }
-.contact{
-  padding-top: 140px;
-}
-.post{
-  padding-top: 140px;
-}
-.page{
-  padding-top: 140px;
-}
+
 
 .container-card {
     width: 1320px;
@@ -210,28 +202,24 @@ color: #1850ca;
 }
 
 .card-image {
-  flex: 0 1 18rem;
+  flex: 0 1 15rem;
   display: flex;
   align-items: center;
   margin: 20px 18px 44px;
   flex-direction: column;
   background: #fff;
   transition: all 0.3s ease-in-out;
-  box-shadow: 0 0 15px rgb(0 0 0 / 5%);
   border-radius: 15px;
-  padding: 17px 18px 17px;
-  /* padding: 30px; */
   align-self: normal;
 }
 
 .card-image img {
 width: 100%;
-height: 210px;
+height: 155px;
 object-fit: cover;
 transition: 0.5s;
 object-position: center;
-border-radius: 10px;
-margin: 0 auto 25px;
+margin: 0 auto 10px;
 }
 
 .card-image:hover img{
@@ -239,11 +227,13 @@ margin: 0 auto 25px;
 }
 
 .card-image h3{
-font-size: 17px;
-font-weight: 600;
-color: #3f3975;
+font-size: 13px;
+font-weight: 500;
+color: #444;
+text-align: center;
 margin-bottom: 1em;
 }
+
 .card-image p{
 font-size: 14px;
 text-align: center;
@@ -297,56 +287,14 @@ text-align: center;
     color: #1A516F;
   }
 
-
-  .gallery {
-    display: flex;
-    padding: 2px;
-    transition: 0.3s;
-  }
-  .gallery:hover .gallery__image {
-    filter: grayscale(1);
-  }
-  .gallery__column {
-    display: flex;
-    flex-direction: column;
-    width: 25%;
-  }
-  .gallery__link {
-    margin: 2px;
-    overflow: hidden;
-  }
-  .gallery__link:hover .gallery__image {
-    filter: grayscale(0);
-  }
-  .gallery__link:hover .gallery__caption {
-    opacity: 1;
-  }
-  .gallery__thumb {
-    position: relative;
-  }
-  .gallery__image {
-    display: block;
-    width: 100%;
-    transition: 0.3s;
-  }
-  .gallery__image:hover {
-    transform: scale(1.1);
-  }
-  .gallery__caption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    padding: 25px 15px 15px;
-    width: 100%;
-    font-family: "Raleway", sans-serif;
-    font-size: 16px;
-    color: white;
-    opacity: 0;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(255, 255, 255, 0) 100%);
-    transition: 0.3s;
-  }
-
   .img-footer{
     width: 100%;
   }
+
+  .img-responsive{
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+  
 

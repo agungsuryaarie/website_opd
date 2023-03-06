@@ -12,10 +12,11 @@ class LinkController extends Controller
 {
     public function index()
     {
+        $tittle = 'Selamat Datang di Administrator Website';
         $menu = 'Link Terkait';
         $link = Link::latest()->get();
 
-        return view('admin.link.index', compact('menu', 'link'));
+        return view('admin.link.index', compact('tittle', 'menu', 'link'));
     }
 
     public function store(Request $request, Link $link)

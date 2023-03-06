@@ -13,17 +13,19 @@ class BeritaController extends Controller
 
     public function index()
     {
+        $tittle = 'Selamat Datang di Administrator Website';
         $menu = 'Berita';
         $berita = Berita::latest()->paginate(5);
 
-        return view('admin.berita.index', compact('menu', 'berita'));
+        return view('admin.berita.index', compact('tittle', 'menu', 'berita'));
     }
     public function create()
     {
+        $tittle = 'Selamat Datang di Administrator Website';
         $menu = 'Tambah Berita';
         // $appsetting = AppSetting::first();
 
-        return view('admin.berita.create', compact('menu'));
+        return view('admin.berita.create', compact('tittle', 'menu'));
     }
     public function store(Request $request, Berita $berita)
     {
@@ -60,10 +62,11 @@ class BeritaController extends Controller
 
     public function edit($id)
     {
+        $tittle = 'Selamat Datang di Administrator Website';
         $menu = 'Edit Berita';
         $berita = Berita::find($id);
 
-        return view('admin.berita.edit', compact('menu', 'berita'));
+        return view('admin.berita.edit', compact('tittle', 'menu', 'berita'));
     }
 
     public function update($id, Request $request)

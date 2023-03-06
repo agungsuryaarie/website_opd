@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="post section-bg">
+    <div class="section-content section-bg">
         <div class="section-tittle">
-            <h3>{{ $title }}</h3>
+            <h3>{{ $title2 }}</h3>
         </div>
         <div class="row-card">
             @foreach ($post_umum as $pu)

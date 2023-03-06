@@ -26,7 +26,7 @@
     <li class="dropdown"><a href="#"><span>Media</span> <i class="bi bi-chevron-down"></i></a>
         <ul>
             <li><a href="{{ route('media.index') }}">Foto</a></li>
-            <li><a href="#">Video</a>
+            <li><a href="{{ route('media.video') }}">Video</a>
             </li>
         </ul>
     </li>

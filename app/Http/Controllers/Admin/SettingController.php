@@ -14,17 +14,19 @@ class SettingController extends Controller
 
     public function index()
     {
+        $tittle = 'Selamat Datang di Administrator Website';
         $menu = 'Setting Profil Instansi';
         $setting = Setting::first();
 
-        return view('admin.setting.index', compact('menu', 'setting'));
+        return view('admin.setting.index', compact('tittle', 'menu', 'setting'));
     }
 
     public function create(Request $request)
 
     {
+        $tittle = 'Selamat Datang di Administrator Website';
         $menu = 'Isi Data';
-        return view('admin.setting.create', compact('menu'));
+        return view('admin.setting.create', compact('tittle', 'menu'));
     }
 
     public function store(Request $request, Setting $setting)
@@ -78,9 +80,10 @@ class SettingController extends Controller
 
     public function edit(Request $request, Setting $setting)
     {
+        $tittle = 'Selamat Datang di Administrator Website';
         $menu = 'Edit Profil Instansi';
         $setting = Setting::first();
-        return view('admin.setting.edit', compact('menu', 'setting'));
+        return view('admin.setting.edit', compact('tittle', 'menu', 'setting'));
     }
 
     public function update(Request $request, Setting $setting)

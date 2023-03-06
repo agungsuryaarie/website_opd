@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="post section-bg">
+    <div class="section-content section-bg">
         <div class="container">
             <div class="row-news">
                 <div class="card-details">

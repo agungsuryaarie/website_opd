@@ -13,10 +13,11 @@ class SlideshowController extends Controller
 {
     public function index()
     {
+        $tittle = 'Selamat Datang di Administrator Website';
         $menu = 'Slideshow';
         $slideshow = Slideshow::latest()->get();
 
-        return view('admin.slideshow.index', compact('menu', 'slideshow'));
+        return view('admin.slideshow.index', compact('tittle', 'menu', 'slideshow'));
     }
 
     public function store(Request $request, Slideshow $slideshow)

@@ -16,6 +16,7 @@ class HomeController extends Controller
 {
     public function index()
     {
+        $title = 'Badan Penangulangan Bencana Daerah | Kabupaten Batu Bara';
         $slideshow = Slideshow::orderBy('id', 'desc')->limit(3)->get();
         // $posts = Berita::orderBy('id', 'desc')->limit(3)->get();
         $link = Link::orderBy('id', 'desc')->get();
@@ -27,6 +28,7 @@ class HomeController extends Controller
         $layanan = Layanan::orderBy('id', 'asc')->get();
         $setting = Setting::first();
         return view('home', compact(
+            'title',
             'slideshow',
             'link',
             'banner',

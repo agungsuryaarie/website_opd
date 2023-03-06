@@ -11,9 +11,10 @@ class KontakController extends Controller
 {
     public function index()
     {
+        $title = 'Badan Penangulangan Bencana Daerah | Kabupaten Batu Bara';
         $setting = Setting::first();
         $halaman = Halaman::orderBy('id', 'asc')->get();
         $layanan = Layanan::orderBy('id', 'asc')->get();
-        return view('kontak', compact('setting', 'halaman', 'layanan'));
+        return view('kontak', compact('title', 'setting', 'halaman', 'layanan'));
     }
 }

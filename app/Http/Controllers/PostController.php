@@ -13,12 +13,13 @@ class PostController extends Controller
 {
     public function index()
     {
-        $title = 'Semua Berita';
+        $title = 'Badan Penangulangan Bencana Daerah | Kabupaten Batu Bara';
+        $title2 = 'Semua Berita';
         $post = Berita::orderBy('id', 'desc')->latest()->paginate(9);
         $halaman = Halaman::orderBy('id', 'asc')->get();
         $layanan = Layanan::orderBy('id', 'asc')->get();
         $setting = Setting::first();
-        return view('post', compact('post', 'title', 'halaman', 'layanan', 'setting'));
+        return view('post', compact('post', 'title', 'title2', 'halaman', 'layanan', 'setting'));
     }
 
     public function show(Berita $post)
@@ -34,31 +35,34 @@ class PostController extends Controller
 
     public function dinas()
     {
-        $title = 'Kategori Dinas';
+        $title = 'Badan Penangulangan Bencana Daerah | Kabupaten Batu Bara';
+        $title2 = 'Kategori Dinas';
         $post_dinas = Berita::orderBy('id', 'desc')->where('kategori', '=', 'Dinas')->latest()->paginate(12);
         $halaman = Halaman::orderBy('id', 'asc')->get();
         $layanan = Layanan::orderBy('id', 'asc')->get();
         $setting = Setting::first();
-        return view('post_dinas', compact('post_dinas', 'title', 'halaman', 'layanan', 'setting'));
+        return view('post_dinas', compact('post_dinas', 'title', 'title2', 'halaman', 'layanan', 'setting'));
     }
 
     public function pemerintahan()
     {
-        $title = 'Kategori Pemerintahan';
+        $title = 'Badan Penangulangan Bencana Daerah | Kabupaten Batu Bara';
+        $title2 = 'Kategori Pemerintahan';
         $post_pemerintahan = Berita::orderBy('id', 'desc')->where('kategori', '=', 'Pemerintahan')->latest()->paginate(12);
         $halaman = Halaman::orderBy('id', 'asc')->get();
         $layanan = Layanan::orderBy('id', 'asc')->get();
         $setting = Setting::first();
-        return view('post_pemerintahan', compact('post_pemerintahan', 'title', 'halaman', 'layanan', 'setting'));
+        return view('post_pemerintahan', compact('post_pemerintahan', 'title', 'title2', 'halaman', 'layanan', 'setting'));
     }
 
     public function umum()
     {
-        $title = 'Kategori Umum';
+        $title = 'Badan Penangulangan Bencana Daerah | Kabupaten Batu Bara';
+        $title2 = 'Kategori Umum';
         $post_umum = Berita::orderBy('id', 'desc')->where('kategori', '=', 'Umum')->latest()->paginate(12);
         $halaman = Halaman::orderBy('id', 'asc')->get();
         $layanan = Layanan::orderBy('id', 'asc')->get();
         $setting = Setting::first();
-        return view('post_umum', compact('post_umum', 'title', 'halaman', 'layanan', 'setting'));
+        return view('post_umum', compact('post_umum', 'title', 'title2', 'halaman', 'layanan', 'setting'));
     }
 }

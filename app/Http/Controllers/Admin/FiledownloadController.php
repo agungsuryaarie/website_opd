@@ -12,10 +12,11 @@ class FiledownloadController extends Controller
 {
     public function index()
     {
+        $tittle = 'Selamat Datang di Administrator Website';
         $menu = 'File Download';
         $filedownload = Filedownload::latest()->get();
 
-        return view('admin.file-download.index', compact('menu', 'filedownload'));
+        return view('admin.file-download.index', compact('tittle', 'menu', 'filedownload'));
     }
 
     public function store(Request $request, Filedownload $filedownload)

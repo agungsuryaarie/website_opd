@@ -13,10 +13,11 @@ class BannerController extends Controller
 {
     public function index()
     {
+        $tittle = 'Selamat Datang di Administrator Website';
         $menu = 'Banner';
         $banner = Banner::latest()->get();
 
-        return view('admin.banner.index', compact('menu', 'banner'));
+        return view('admin.banner.index', compact('tittle', 'menu', 'banner'));
     }
 
     public function store(Request $request, Banner $banner)

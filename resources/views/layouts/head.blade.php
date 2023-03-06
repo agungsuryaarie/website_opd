@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Badan Penangulangan Bencana Daerah | Kabupaten Batu Bara</title>
+    <title>{{ $title }}</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -34,18 +34,13 @@
 
     {{-- blog style --}}
     <link href="{{ url('front/css/blog.style.css') }}" rel="stylesheet">
+
+    <!-- vendor -->
     <link href="{{ url('front/css/plugins.css') }}" rel="stylesheet">
     <link href="{{ url('front/css/travel.style.css') }}" rel="stylesheet">
+    <link href="{{ url('front/fancybox/source/jquery.fancybox.css') }}" rel="stylesheet">
+    <link href="{{ url('front/css/blocks.css') }}" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="{{ url('front/DataTables/datatables.min.css') }}">
 
-
-
-
-    <!-- =======================================================
-  * Template Name: Techie - v4.10.0
-  * Template URL: https://bootstrapmade.com/techie-free-skin-bootstrap-3/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>

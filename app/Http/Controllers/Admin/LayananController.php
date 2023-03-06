@@ -13,17 +13,19 @@ class LayananController extends Controller
 {
     public function index()
     {
+        $tittle = 'Selamat Datang di Administrator Website';
         $menu = 'Layanan';
         $layanan = Layanan::latest()->paginate(5);
 
-        return view('admin.layanan.index', compact('menu', 'layanan'));
+        return view('admin.layanan.index', compact('tittle', 'menu', 'layanan'));
     }
 
     public function create()
     {
+        $tittle = 'Selamat Datang di Administrator Website';
         $menu = 'Tambah menu Layanan';
 
-        return view('admin.layanan.create', compact('menu'));
+        return view('admin.layanan.create', compact('tittle', 'menu'));
     }
 
     public function store(Request $request, Layanan $layanan)
@@ -62,10 +64,11 @@ class LayananController extends Controller
 
     public function edit($id)
     {
+        $tittle = 'Selamat Datang di Administrator Website';
         $menu = 'Edit menu Profile';
         $layanan = Layanan::find($id);
 
-        return view('admin.layanan.edit', compact('menu', 'layanan'));
+        return view('admin.layanan.edit', compact('tittle', 'menu', 'layanan'));
     }
 
     public function update($id, Request $request)

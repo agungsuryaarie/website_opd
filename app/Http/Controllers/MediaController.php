@@ -6,24 +6,39 @@ use App\Models\Galeri;
 use App\Models\Foto;
 use App\Models\Halaman;
 use App\Models\Layanan;
+use App\Models\Setting;
+use App\Models\Video;
 use Illuminate\Http\Request;
 
 class MediaController extends Controller
 {
     public function index()
     {
+        $title = 'Badan Penangulangan Bencana Daerah | Kabupaten Batu Bara';
         $foto = Galeri::orderBy('id', 'desc')->latest()->paginate(9);
         $halaman = Halaman::orderBy('id', 'asc')->get();
         $layanan = Layanan::orderBy('id', 'asc')->get();
-        return view('foto', compact('foto', 'halaman', 'layanan'));
+        $setting = Setting::first();
+        return view('foto', compact('title', 'foto', 'halaman', 'layanan', 'setting'));
     }
 
-    public function show($slug)
+    public function show($id)
     {
-        $img = Galeri::where('slug', $slug)->orderBy('id')->get();
-        // $img = Foto::where('galeri_id', $id)->get();
+        $title = 'Badan Penangulangan Bencana Daerah | Kabupaten Batu Bara';
+        $detail = Foto::where('galeri_id', $id)->get();
         $halaman = Halaman::orderBy('id', 'asc')->get();
         $layanan = Layanan::orderBy('id', 'asc')->get();
-        return view('foto_show', compact('img', 'halaman', 'layanan'));
+        $setting = Setting::first();
+        return view('foto_show', compact('title', 'detail', 'halaman', 'layanan', 'setting'));
+    }
+
+    public function video()
+    {
+        $title = 'Badan Penangulangan Bencana Daerah | Kabupaten Batu Bara';
+        $video = Video::orderBy('id', 'desc')->latest()->paginate(9);
+        $halaman = Halaman::orderBy('id', 'asc')->get();
+        $layanan = Layanan::orderBy('id', 'asc')->get();
+        $setting = Setting::first();
+        return view('video', compact('title', 'video', 'setting', 'halaman', 'layanan'));
     }
 }

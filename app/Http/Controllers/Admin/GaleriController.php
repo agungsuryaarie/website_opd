@@ -14,10 +14,11 @@ class GaleriController extends Controller
 {
     public function index()
     {
+        $tittle = 'Selamat Datang di Administrator Website';
         $menu = 'Galeri';
         $galeri = Galeri::latest()->get();
 
-        return view('admin.galeri.index', compact('menu', 'galeri'));
+        return view('admin.galeri.index', compact('tittle', 'menu', 'galeri'));
     }
 
     public function store(Request $request, Galeri $galeri)
@@ -116,10 +117,11 @@ class GaleriController extends Controller
 
     public function tambah_foto($id)
     {
+        $tittle = 'Selamat Datang di Administrator Website';
         $menu = 'Tambah Foto';
         $galery = Galeri::where('id', $id)->first();
         $foto = Foto::where('galeri_id', $id)->get();
-        return view('admin.galeri.tambah_foto', compact('menu', 'galery', 'foto'));
+        return view('admin.galeri.tambah_foto', compact('tittle', 'menu', 'galery', 'foto'));
     }
 
     public function foto_store(Request $request, $id)

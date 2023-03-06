@@ -9,9 +9,10 @@ class DashboardController extends Controller
 {
     public function index()
     {
+        $tittle = 'Selamat Datang di Administrator Website';
         $menu = 'Dashboard';
         // $appsetting = AppSetting::first();
 
-        return view('admin.dashboard', compact('menu'));
+        return view('admin.dashboard', compact('menu', 'tittle'));
     }
 }

@@ -13,17 +13,19 @@ class VideoController extends Controller
 {
     public function index()
     {
+        $tittle = 'Selamat Datang di Administrator Website';
         $menu = 'Video';
         $video = Video::latest()->paginate(5);
 
-        return view('admin.video.index', compact('menu', 'video'));
+        return view('admin.video.index', compact('tittle', 'menu', 'video'));
     }
     public function create()
 
     {
+        $tittle = 'Selamat Datang di Administrator Website';
         $menu = 'Tambah Video';
 
-        return view('admin.video.create', compact('menu'));
+        return view('admin.video.create', compact('tittle', 'menu'));
     }
 
 
@@ -63,10 +65,11 @@ class VideoController extends Controller
 
     public function edit($id)
     {
+        $tittle = 'Selamat Datang di Administrator Website';
         $menu = 'Edit Video';
         $video = Video::find($id);
 
-        return view('admin.video.edit', compact('menu', 'video'));
+        return view('admin.video.edit', compact('tittle', 'menu', 'video'));
     }
 
     public function update($id, Request $request)

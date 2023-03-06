@@ -12,17 +12,19 @@ class HalamanController extends Controller
 {
     public function index()
     {
+        $tittle = 'Selamat Datang di Administrator Website';
         $menu = 'Profile';
         $halaman = Halaman::latest()->paginate(5);
 
-        return view('admin.halaman.index', compact('menu', 'halaman'));
+        return view('admin.halaman.index', compact('tittle', 'menu', 'halaman'));
     }
 
     public function create()
     {
+        $tittle = 'Selamat Datang di Administrator Website';
         $menu = 'Tambah menu Profile';
 
-        return view('admin.halaman.create', compact('menu'));
+        return view('admin.halaman.create', compact('tittle', 'menu'));
     }
 
     public function store(Request $request, Halaman $halaman)
@@ -61,10 +63,11 @@ class HalamanController extends Controller
 
     public function edit($id)
     {
+        $tittle = 'Selamat Datang di Administrator Website';
         $menu = 'Edit menu Profile';
         $halaman = Halaman::find($id);
 
-        return view('admin.halaman.edit', compact('menu', 'halaman'));
+        return view('admin.halaman.edit', compact('tittle', 'menu', 'halaman'));
     }
 
     public function update($id, Request $request)
