@@ -15,7 +15,8 @@ class PostController extends Controller
     {
         $title = 'Badan Penangulangan Bencana Daerah | Kabupaten Batu Bara';
         $title2 = 'Semua Berita';
-        $post = Berita::orderBy('id', 'desc')->latest()->paginate(9);
+        $pagination = 9;
+        $post = Berita::orderBy('id', 'desc')->latest()->paginate($pagination);
         $halaman = Halaman::orderBy('id', 'asc')->get();
         $layanan = Layanan::orderBy('id', 'asc')->get();
         $setting = Setting::first();
@@ -37,7 +38,8 @@ class PostController extends Controller
     {
         $title = 'Badan Penangulangan Bencana Daerah | Kabupaten Batu Bara';
         $title2 = 'Kategori Dinas';
-        $post_dinas = Berita::orderBy('id', 'desc')->where('kategori', '=', 'Dinas')->latest()->paginate(12);
+        $pagination = 9;
+        $post_dinas = Berita::orderBy('id', 'desc')->where('kategori', '=', 'Dinas')->latest()->paginate($pagination);
         $halaman = Halaman::orderBy('id', 'asc')->get();
         $layanan = Layanan::orderBy('id', 'asc')->get();
         $setting = Setting::first();
@@ -48,7 +50,8 @@ class PostController extends Controller
     {
         $title = 'Badan Penangulangan Bencana Daerah | Kabupaten Batu Bara';
         $title2 = 'Kategori Pemerintahan';
-        $post_pemerintahan = Berita::orderBy('id', 'desc')->where('kategori', '=', 'Pemerintahan')->latest()->paginate(12);
+        $pagination = 9;
+        $post_pemerintahan = Berita::orderBy('id', 'desc')->where('kategori', '=', 'Pemerintahan')->latest()->paginate($pagination);
         $halaman = Halaman::orderBy('id', 'asc')->get();
         $layanan = Layanan::orderBy('id', 'asc')->get();
         $setting = Setting::first();
@@ -59,7 +62,8 @@ class PostController extends Controller
     {
         $title = 'Badan Penangulangan Bencana Daerah | Kabupaten Batu Bara';
         $title2 = 'Kategori Umum';
-        $post_umum = Berita::orderBy('id', 'desc')->where('kategori', '=', 'Umum')->latest()->paginate(12);
+        $pagination = 9;
+        $post_umum = Berita::orderBy('id', 'desc')->where('kategori', '=', 'Umum')->latest()->paginate($pagination);
         $halaman = Halaman::orderBy('id', 'asc')->get();
         $layanan = Layanan::orderBy('id', 'asc')->get();
         $setting = Setting::first();

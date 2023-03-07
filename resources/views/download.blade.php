@@ -23,7 +23,8 @@
                                             <td>{{ $no++ }}</td>
                                             <td>{{ $d->nama_file }} </td>
                                             <td>{{ $d->tanggalfile }} </td>
-                                            <td class="text-center"><a href="" class="btn btn-primary btn-sm">
+                                            <td class="text-center"><a href="{{ url('storage/lampiran', $d->lampiran) }}"
+                                                    target="_blank" class="btn btn-primary btn-sm">
                                                     <i class="bi bi-cloud-arrow-down-fill"></i> Download</a>
                                             </td>
                                         </tr>

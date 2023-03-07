@@ -5,7 +5,7 @@
     <div class="section-content">
         <div class="container-f mb-30">
             <div class="text-center margin-bottom-50">
-                <h2 class="title-v2 title-center">judul album</h2>
+                <h2 class="title-v2 title-center">{{ $foto->judul }}</h2>
             </div>
 
             <div class="row  margin-bottom-30">

@@ -25,11 +25,12 @@ class MediaController extends Controller
     public function show($id)
     {
         $title = 'Badan Penangulangan Bencana Daerah | Kabupaten Batu Bara';
+        $foto = Galeri::orderBy('id', 'desc')->first();
         $detail = Foto::where('galeri_id', $id)->get();
         $halaman = Halaman::orderBy('id', 'asc')->get();
         $layanan = Layanan::orderBy('id', 'asc')->get();
         $setting = Setting::first();
-        return view('foto_show', compact('title', 'detail', 'halaman', 'layanan', 'setting'));
+        return view('foto_show', compact('title', 'detail', 'halaman', 'layanan', 'setting', 'foto'));
     }
 
     public function video()
