@@ -21,7 +21,6 @@
             </button>
         </div>
     </div>
-
     <main id="main">
         <section id="news" class="news section-bg">
             <div class="container">
