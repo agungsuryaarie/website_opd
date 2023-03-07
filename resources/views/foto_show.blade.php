@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    <!-- Four Columns -->
     <div class="section-content">
         <div class="container-f mb-30">
             <div class="text-center margin-bottom-50">
