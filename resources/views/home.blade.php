@@ -70,7 +70,6 @@
                                             <h3><a href="{{ route('post.show', $post->slug) }}">{{ $post->judul }}</a></h3>
                                             <ul class="blog-thumb-info">
                                                 <li><i class="bi bi-calendar"></i> {{ $post->tanggal }}</li>
-                                                <li><i class="bi bi-clock"></i> {{ $post->jam }} WIB</li>
                                             </ul>
                                         </div>
                                     </div>
