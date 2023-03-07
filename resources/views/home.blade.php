@@ -124,66 +124,6 @@
         </section>
 
 
-        <section id="berita" class="berita">
-            <div class="popular-tours g-pb-20" id="Popular-Tours">
-                <div class="container-f">
-                    <div class="section-tittle">
-                        <div class="d-flex bd-highlight">
-                            <h2 class="flex-grow-1 bd-highlight">Infografis</h2>
-                            <div class="bd-highlight" id="event-more">
-                                <div class="view-more">
-                                    <a href="https://smartcity.batubarakab.go.id/berita-api"
-                                        class="d-flex align-items-center jss-cinfo text-hover-primary mb-10">Lihat semua <i
-                                            class="fad fa-chevron-double-right d-none d-md-block d-lg-block py-1 px-1 jss-cinfo"></i>>></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row slider text-left">
-                        <div class="col-md-4 col-xs-6 col-2xs-12 g-mb-30">
-                            <div class="popular-tours-item">
-                                <div class="img-wrapper img-wrapper--shadow">
-                                    <img src="{{ url('front/img/3.png') }}" alt="ALT" class="img-responsive">
-                                </div>
-                                <div class="popular-tours-item-info blog-grid">
-                                    <div class="popular-tours-item-info-inner">
-                                        <h3><em>Infografis Bencana Tahun 2022</em></h3>
-                                    </div>
-                                </div>
-                                <a href="" class="popular-tours-item__more"></a>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-xs-6 col-2xs-12 g-mb-30">
-                            <div class="popular-tours-item">
-                                <div class="img-wrapper img-wrapper--shadow">
-                                    <img src="{{ url('front/img/3.png') }}" alt="ALT" class="img-responsive">
-                                </div>
-                                <div class="popular-tours-item-info blog-grid">
-                                    <div class="popular-tours-item-info-inner">
-                                        <h3><em>Infografis Bencana Tahun 2022</em></h3>
-                                    </div>
-                                </div>
-                                <a href="" class="popular-tours-item__more"></a>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-xs-6 col-2xs-12 g-mb-30">
-                            <div class="popular-tours-item">
-                                <div class="img-wrapper img-wrapper--shadow">
-                                    <img src="{{ url('front/img/3.png') }}" alt="ALT" class="img-responsive">
-                                </div>
-                                <div class="popular-tours-item-info blog-grid">
-                                    <div class="popular-tours-item-info-inner">
-                                        <h3><em>Infografis Bencana Tahun 2022</em></h3>
-                                    </div>
-                                </div>
-                                <a href="" class="popular-tours-item__more"></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- ======= Testimonials Section ======= -->
         <section id="testimonials" class="testimonials section-bg">
             <div class="container-f" data-aos="fade-up">
