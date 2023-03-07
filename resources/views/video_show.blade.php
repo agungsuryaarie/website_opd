@@ -8,7 +8,9 @@
             </div>
             <div class="row  margin-bottom-30">
                 <div class="col-sm-3 sm-margin-bottom-30">
-                    {{ preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $video->url, $video_link) }}
+                    <div class="hidden">
+                        {{ preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $video->url, $video_link) }}
+                    </div>
                     <iframe src="https://www.youtube.com/embed/{{ $video_link[1] }}" allowfullscreen
                         class="absolute top-0 left-0 w-full h-full rounded-xl" title="Video Profil"></iframe>
                     </a>
