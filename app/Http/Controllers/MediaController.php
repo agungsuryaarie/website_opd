@@ -41,4 +41,12 @@ class MediaController extends Controller
         $setting = Setting::first();
         return view('video', compact('title', 'video', 'setting', 'halaman', 'layanan'));
     }
+    public function showv(Video $video)
+    {
+        $title = 'Badan Penangulangan Bencana Daerah | Kabupaten Batu Bara';
+        $halaman = Halaman::orderBy('id', 'asc')->get();
+        $layanan = Layanan::orderBy('id', 'asc')->get();
+        $setting = Setting::first();
+        return view('video_show', compact('title', 'video', 'halaman', 'layanan', 'setting'));
+    }
 }

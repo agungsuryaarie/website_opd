@@ -22,6 +22,7 @@ Route::get('/download', [DownloadController::class, 'index'])->name('download.in
 Route::get('/media/foto', [MediaController::class, 'index'])->name('media.index');
 Route::get('/media/foto/detail/{id}', [MediaController::class, 'show'])->name('media.show');
 Route::get('/media/video', [MediaController::class, 'video'])->name('media.video');
+Route::get('/media/video/{video:slug}', [MediaController::class, 'showv'])->name('video.show');
 Route::get('/post', [PostController::class, 'index'])->name('post.index');
 Route::get('/post/{post:slug}', [PostController::class, 'show'])->name('post.show');
 Route::get('/post_dinas', [PostController::class, 'dinas'])->name('post.dinas');
